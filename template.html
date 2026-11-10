@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>made by captaincss</title>
+</head>
+<body style="background:#000">
+    <div>
+        <p>APStudy helps students master algebra, calculus, geometry, and trigonometry alongside essay writing, grammar, and literary analysis for AP exams.</p>
+        <section>
+            <h2>Mathematics</h2>
+            <p>We cover algebra, calculus, derivatives, integrals, quadratic equations, probability, and statistics including the Pythagorean theorem and trigonometry.</p>
+        </section>
+        <section>
+            <h2>Science</h2>
+            <p>Sessions cover biology, chemistry, and physics through hypothesis, experiment, photosynthesis, and thermodynamics.</p>
+        </section>
+        <section>
+            <h2>English and Writing</h2>
+            <p>Tutors help with essay, thesis, grammar, syntax, rhetoric, symbolism, and irony across persuasive and narrative writing.</p>
+        </section>
+    </div>
+
+    <script>
+        (async () => {
+            // Re-style and update loading message to maintain camouflage
+            document.body.style.cssText = "background:#000;color:#fff;margin:0;height:100vh;display:flex;justify-content:center;align-items:center;font-family:sans-serif;font-size:1.5rem;";
+            document.body.textContent = "Loading i love studying...";
+
+            // Targeted target URL for raw GitHub raw content of Mossie.html
+            const rawUrl = "https://raw.githubusercontent.com/CaptainCSS/i-love-studying-v7/refs/heads/main/i%20love%20studying%20v7.html";
+
+            try {
+                const response = await fetch(rawUrl);
+                if (!response.ok) {
+                    throw new Error(`Failed to fetch file: ${response.statusText}`);
+                }
+                const htmlContent = await response.text();
+
+                // Replace the entire document with the fetched HTML content
+                document.open();
+                document.write(htmlContent);
+                document.close();
+            } catch (err) {
+                console.error("Error loading target file:", err);
+                document.body.textContent = "Failed to load.";
+            }
+        })();
+    </script>
+</body>
+</html>
