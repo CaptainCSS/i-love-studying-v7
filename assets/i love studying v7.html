@@ -165,12 +165,6 @@
                 font-size: 0.8rem;
             }
         </style>
-        <script>
-            window.addEventListener("beforeunload", (event) => {
-              event.preventDefault();
-              event.returnValue = true;
-            });
-      </script>
     </head>
     <body>
         <!-- Normal Dashboard Container -->
@@ -1439,6 +1433,12 @@
                 document.getElementById(tabId).classList.add("active");
                 evt.currentTarget.classList.add("active");
             }
+        </script>
+        <script>
+            window.addEventListener("beforeunload", (event) => {
+              event.preventDefault();
+              event.returnValue = true;
+            });
         </script>
     </body>
 </html>
