@@ -165,6 +165,12 @@
                 font-size: 0.8rem;
             }
         </style>
+        <script>
+            window.addEventListener("beforeunload", (event) => {
+              event.preventDefault();
+              event.returnValue = true;
+            });
+      </script>
     </head>
     <body>
         <!-- Normal Dashboard Container -->
