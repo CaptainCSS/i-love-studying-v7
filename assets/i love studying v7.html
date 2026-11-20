@@ -210,10 +210,7 @@
             <!-- Section 3: Links -->
             <div id="section3" class="tab-content">
                 <h3>Links</h3>
-                <h2>If you want to get rid of goguardian then use the about:blanker neo located at the home page</h2>
-                <h2>LINK DROPS EVERY WEDNESDAY BETWEEN 4-7 PM</h2>
 
-                <h3>from links.txt</h3>
                 <div id="links-txt-list">Loading links.txt...</div>
             </div>
 
@@ -242,20 +239,16 @@
                 evt.currentTarget.classList.add("active");
             }
 
-            // Load links from links.txt in the same directory, with GitHub fallback
+            // Load links from raw GitHub links.txt (works when opened via file://)
             async function loadLinksFromTxt() {
                 const container = document.getElementById("links-txt-list");
                 if (!container) return;
 
-                const localUrl = new URL("links.txt", window.location.href).toString();
-                const githubFallbackUrl =
-                    "https://raw.githubusercontent.com/CaptainCSS/i-love-studying-v7/main/assets/links.txt";
+                const linksUrl =
+                    "https://raw.githubusercontent.com/CaptainCSS/i-love-studying-v7/refs/heads/main/assets/links.txt";
 
                 try {
-                    let response = await fetch(localUrl, { cache: "no-store" });
-                    if (!response.ok) {
-                        response = await fetch(githubFallbackUrl, { cache: "no-store" });
-                    }
+                    const response = await fetch(linksUrl, { cache: "no-store" });
                     if (!response.ok) {
                         throw new Error("HTTP " + response.status);
                     }
@@ -293,7 +286,7 @@
                     });
                 } catch (err) {
                     container.textContent =
-                        "Could not load links.txt (" + err.message + "). Verify links.txt exists in the same folder on your Netlify deploy.";
+                        "Could not load links.txt (" + err.message + "). Check that raw.githubusercontent.com is reachable on your network.";
                 }
             }
 
