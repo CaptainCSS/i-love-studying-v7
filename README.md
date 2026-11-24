@@ -5,3 +5,6 @@ Hosting files that are pulled from firebase.
 - **i love studying v6.svg**: The main website; tons of links, games, and sources. 
 - **about-blanker NEO.svg**: Load any link inside about:blank which lets you bypass some filters.
 - ***And tons of other proxies!***
+
+
+huge thanks to [@babygojo](https://discord.com/users/1557470551780630649) for styling ❤️
